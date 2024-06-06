@@ -1,53 +1,149 @@
+@import "../../App.scss";
 .skills {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
-  margin-top: 200px;
+  margin-top: 100px;
+  @include mobile {
+    width: 100%;
+    height: 100%;
+  }
   h1 {
     font-size: 50px;
+    animation: fadeIn 2s;
+    @include mobile {
+      font-size: 32px;
+    }
   }
+
   p {
     text-align: center;
     font-size: 18px;
+    @include mobile {
+      font-size: 16px;
+      max-width: 300px;
+    }
+    animation: fadeIn 2s;
   }
+
   .skill {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 150px;
+    gap: 300px;
+    flex-wrap: wrap;
+    animation: fadeIn 2s;
+    margin-top: 80px;
+    @include mobile {
+      gap: 50px;
+    }
     .skill1 {
       width: 500px;
       display: flex;
       flex-direction: column;
       gap: 35px;
       flex-wrap: wrap;
+      @include mobile {
+        display: flex;
+        text-align: center;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+      }
+      h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        animation: slideIn 1s;
+      }
+
+      p {
+        font-size: 1em;
+        line-height: 1.6;
+        animation: fadeIn 1s;
+        @include mobile {
+          font-size: 14px;
+          max-width: 200px;
+        }
+      }
+
+      button {
+        padding: 20px;
+        border-radius: 50px;
+        width: 150px;
+        border: 0;
+        cursor: pointer;
+        font-size: 16px;
+        background: orange;
+        transition: background-color 0.3s, transform 0.3s;
+
+        &:hover {
+          background-color: #007bff;
+          color: #fff;
+          transform: scale(1.1);
+        }
+      }
     }
-    .js {
-      width: 100px;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      border-radius: 30px;
-      background: grey;
-    }
+
     .skill_cart {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 20px;
+      @include mobile {
+        display: flex;
+        max-width: 250px;
+      }
+      .js {
+        width: 100px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 30px;
+        flex-wrap: wrap;
+        background: grey;
+        transition: transform 0.3s;
+        animation: bounceIn 1s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
   }
-  button {
-    padding: 20px;
-    border-radius: 50px;
-    width: 150px;
-    border: 0;
-    cursor: pointer;
-    font-size: 16px;
-    background: orange;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }

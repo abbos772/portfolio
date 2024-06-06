@@ -1,5 +1,6 @@
 import React from "react";
 import "./Portfolio.scss";
+
 const Portfolio = () => {
   return (
     <div className="continer">
@@ -7,7 +8,7 @@ const Portfolio = () => {
         <h1>About ME</h1>
         <p>
           Here you will find more information about me, what I do, and my
-          current skills mostly in terms <br /> of programming and technology
+          current skills mostly in terms <br /> of programming and technology.
         </p>
         <div className="skill">
           <div className="skill1">

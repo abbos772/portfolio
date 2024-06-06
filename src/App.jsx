@@ -1,5 +1,6 @@
 import "./App.scss";
 import Test from "./Test";
+import Contact from "./components/Contact/Contact";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Parallax from "./components/Parallax/Parallax";
@@ -19,14 +20,16 @@ function App() {
         <section>
           <Services />
         </section>
-        <section id="Portfolio">
-          {" "}
-          <Parallax type="portfolio" />
-        </section>
         <section>
-          <Portfolio />
+          {" "}
+          <Parallax />
         </section>
-        <section id="Contact">Contact</section>
+        <section id="Portfolio">
+          <Portfolio type="portfolio" />
+        </section>
+        <section id="Contact">
+          <Contact />
+        </section>
         {/* <Test /> */}
       </div>
     </>
